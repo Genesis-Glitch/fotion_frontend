@@ -35,6 +35,16 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
+        name="donation"
+        options={{
+          title: 'Donatation',
+          tabBarShowLabel: false,
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon name={focused ? 'heart' : 'heart-outline'} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
         name="profile"
         options={{
           title: 'Profile',

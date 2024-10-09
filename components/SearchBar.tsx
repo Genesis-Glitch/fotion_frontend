@@ -1,12 +1,12 @@
 import React from 'react';
-import { View, TextInput, Button, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, TextInput, Button, StyleSheet, TouchableOpacity } from 'react-native';
 
 export default function SearchBar() {
   return (
     <View style={styles.searchRow}>
       <TextInput style={styles.searchInput} placeholder="Search..." />
       <TouchableOpacity style={styles.button} onPress={() => {}}>
-        <TextInput style={styles.buttonText}>Search</TextInput>
+        <Text style={styles.buttonText}>Search</Text>
       </TouchableOpacity>
     </View>
   );

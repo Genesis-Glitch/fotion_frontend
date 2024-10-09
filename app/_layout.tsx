@@ -31,6 +31,7 @@ export default function RootLayout() {
       <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="pages/event-details" options={{ headerTitle: "Event Details", headerTitleAlign: 'center' }}/>
+        <Stack.Screen name="pages/registered" options={{ headerTitle: "Registered", headerTitleAlign: 'center' }}/>
         <Stack.Screen name="+not-found" />
       </Stack>
     </ThemeProvider>

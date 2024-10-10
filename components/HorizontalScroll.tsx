@@ -34,10 +34,11 @@ const HorizontalScroll: React.FC<Props> = ({ title, images }) => {
 const styles = StyleSheet.create({
     container: {
         borderRadius: 10,
-        borderColor: 'black',
+        borderColor: '#4CAF50', // Secondary Color (Fresh Green)
         borderWidth: 1,
         borderStyle: 'solid',
-        paddingHorizontal: 5
+        paddingHorizontal: 5,
+        backgroundColor: '#F5F5DC', // Neutral Color (Soft Beige)
     },
     scrollContainer: {
         paddingVertical: 10,
@@ -51,16 +52,20 @@ const styles = StyleSheet.create({
         marginBottom: 10,
         alignItems: 'center',
         borderRadius: 15,
+        backgroundColor: '#F5F5DC', // Neutral Color (Soft Beige)
     },
     image: {
         width: 100,
         height: 200,
         marginBottom: 5,
         borderRadius: 15,
-        resizeMode: 'cover'
+        resizeMode: 'cover',
     },
     imageTitle: {
-        fontSize: 16,
+        fontSize: 14,
+        color: '#FF7043', // Primary Color (Warm Orange)
+        fontWeight: 'bold',
+        backgroundColor: '#F5F5DC', // Neutral Color (Soft Beige)
     },
 });
 

@@ -48,5 +48,5 @@
     "typescript": "~5.3.3"
   },
   "private": true,
-  "proxy" : "http://52.11.213.134/"
+  "proxy": "http://52.11.213.134/"
 }

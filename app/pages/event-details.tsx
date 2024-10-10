@@ -133,8 +133,8 @@ const EventDetails = () => {
       </ThemedView>
 
       <TouchableOpacity style={styles.button}>
-        <Link href="/pages/register-details" style={styles.buttonText}>
-          Register
+        <Link href="/pages/register-details">
+          <ThemedText style={styles.buttonText}>Register</ThemedText>
         </Link>
       </TouchableOpacity>
     </ScrollView>
@@ -146,51 +146,58 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingVertical: 30,
     paddingHorizontal: 10,
-    backgroundColor: 'white'
+    backgroundColor: '#F5F5DC', // Neutral Color (Soft Beige)
   },
   titleRow: {
     flexDirection: 'row',
     justifyContent: 'flex-start',
     marginTop: 20,
+    backgroundColor: '#F5F5DC', // Neutral Color (Soft Beige)
   },
   title: {
     fontSize: 24,
     fontWeight: 'bold',
+    color: '#4CAF50', // Secondary Color (Fresh Green)
   },
   detailsContainer: {
     marginVertical: 20,
+    backgroundColor: '#F5F5DC', // Neutral Color (Soft Beige)
   },
   row: {
     flexDirection: 'row',
     alignItems: 'center', // Align items vertically centered
     marginBottom: 10,
+    backgroundColor: '#F5F5DC', // Neutral Color (Soft Beige)
   },
   icon: {
     marginRight: 10, // Space between icon and text
     width: 30, // Fixed width to align icons
   },
   locationIcon: {
-    marginLeft: 3, // Move location icon 5px to the right
+    marginLeft: 3, // Move location icon slightly to the right
   },
   date: {
     fontSize: 16,
     fontWeight: '500',
+    color: '#FF7043', // Primary Color (Warm Orange)
   },
   location: {
     fontSize: 16,
     fontWeight: '500',
+    color: '#FF7043', // Primary Color (Warm Orange)
   },
   aboutTitle: {
     fontSize: 18,
     fontWeight: 'bold',
     marginBottom: 10,
+    color: '#4CAF50', // Secondary Color (Fresh Green)
   },
   aboutText: {
     fontSize: 14,
     color: '#333',
   },
   button: {
-    backgroundColor: '#007BFF',
+    backgroundColor: '#FF7043', // Primary Color (Warm Orange)
     padding: 10,
     borderRadius: 10, // Rounding corners
     alignItems: 'center',
@@ -206,6 +213,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
     marginVertical: 10,
+    color: '#4CAF50', // Secondary Color (Fresh Green)
   },
   mapContainer: {
     height: 200,
@@ -216,5 +224,6 @@ const styles = StyleSheet.create({
     ...StyleSheet.absoluteFillObject,  // Make the map take up the entire space of its container
   },
 });
+
 
 export default EventDetails;

@@ -67,6 +67,16 @@ export default function HomeScreen() {
               "title": "AUCKLAND 3",
               "url": "https://picsum.photos/300/600"
             },
+            {    
+              "id": "31",
+              "title": "AUCKLAND 4",
+              "url": "https://picsum.photos/400/800"
+            },
+            {    
+              "id": "32",
+              "title": "AUCKLAND 5",
+              "url": "https://picsum.photos/500/1000"
+            },
         ]
     },
     {
@@ -87,6 +97,16 @@ export default function HomeScreen() {
             "title": "WELLINGTON 3",
             "url": "https://picsum.photos/160/200"
           },
+          {    
+            "id": "61",
+            "title": "WELLINGTON 4",
+            "url": "https://picsum.photos/320/200"
+          },
+          {    
+            "id": "62",
+            "title": "WELLINGTON 5",
+            "url": "https://picsum.photos/500/1000"
+          },
         ]
     },
     {
@@ -105,6 +125,11 @@ export default function HomeScreen() {
           {    
             "id": "9",
             "title": "CHRISTCHURCH 3",
+            "url": "https://picsum.photos/370/200"
+          },
+          {    
+            "id": "10",
+            "title": "CHRISTCHURCH 4",
             "url": "https://picsum.photos/370/200"
           },
         ]
@@ -138,17 +163,18 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 10,
-    backgroundColor: '#F5F5F5' // Neutral Color (Soft Beige)
+    backgroundColor: '#F5F5DC' // Neutral Color (Soft Beige)
   },
   scrollContainer: {
     gap: 5,
     marginBottom: 20,
+    backgroundColor: '#F5F5DC' // Neutral Color (Soft Beige)
   },
   titleRow: {
     flexDirection: 'row',
     justifyContent: 'flex-start',
     marginBottom: 20,
-    backgroundColor: '#F5F5F5' // Neutral Color (Soft Beige)
+    backgroundColor: '#F5F5DC' // Neutral Color (Soft Beige)
   },
   title: {
     fontSize: 24,
@@ -159,7 +185,8 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: '600',
     marginVertical: 5,
-    color: '#4CAF50' // Secondary Color (Fresh Green)
+    color: '#4CAF50', // Secondary Color (Fresh Green)
+    backgroundColor: '#F5F5DC' // Neutral Color (Soft Beige)
   },
   verticalContent: {
     height: 200,

@@ -32,26 +32,32 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingVertical: 30,
     paddingHorizontal: 10,
-    backgroundColor: 'white'
+    backgroundColor: '#F5F5DC', // Neutral Color (Soft Beige)
   },
   titleRow: {
     flexDirection: 'row',
     justifyContent: 'flex-start',
     marginBottom: 20,
-    height: 400,
+    height: 100,
       textAlign: "center",
-    verticalAlign: "middle"
+    verticalAlign: "middle",
+    backgroundColor: '#F5F5DC', // Neutral Color (Soft Beige)
+
   },
   title: {
     fontSize: 24,
     fontWeight: 'bold',
+    color: '#4CAF50', // Secondary Color (Fresh Green)
+
   },
   notification : {
     fontSize: 30 ,
+    color: '#4CAF50', // Secondary Color (Fresh Green)
+
   },
   button: {
     flex: 1,
-    backgroundColor: '#007BFF',
+    backgroundColor: '#FF7043', // Primary Color (Warm Orange)
     padding: 10,
     borderRadius: 10, // Rounding corners
     alignItems: 'center',

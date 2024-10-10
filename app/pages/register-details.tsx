@@ -1,5 +1,4 @@
-import { StyleSheet, ScrollView, TextInput, TouchableOpacity, Text } from 'react-native';
-
+import { StyleSheet, ScrollView, TextInput, TouchableOpacity } from 'react-native';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import React from 'react';
@@ -8,36 +7,36 @@ import { Link } from 'expo-router'; // Import Link from expo-router
 
 export default function HomeScreen() {
 
-
   const category = [
-    { name : "user_id" , visible: false},
-    { name : "Name" , visible: true},
-    { name : "Email" , visible: true},
-  ]
+    { name: "user_id", visible: false },
+    { name: "Name", visible: true },
+    { name: "Email", visible: true },
+  ];
 
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
-        
+
         <ThemedView style={styles.titleRow}>
           <ThemedText style={styles.title}>FOTION</ThemedText>
         </ThemedView>
-        
-        {category.map(item => (
-            item.visible ? 
+
+        {category.map((item) => (
+          item.visible ? (
             <ThemedView style={styles.scrollContainer} key={item.name}>
               <TextInput style={styles.searchInput} placeholder={item.name} />
-            </ThemedView> : ""
+            </ThemedView>
+          ) : null
         ))}
-        <TouchableOpacity style={styles.button}onPress={() => {}}>
-          {/* <Text style={styles.buttonText}>Register</Text> */}
-          <Link href="../pages/registered" style={styles.button}>
+
+        <TouchableOpacity style={styles.button}>
+          <Link href="../pages/registered" style={styles.buttonLink}>
             <ThemedText style={styles.buttonText}>Register</ThemedText>
           </Link>
         </TouchableOpacity>
-      </ScrollView>
 
-    </SafeAreaView >
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 
@@ -45,48 +44,38 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 10,
-    backgroundColor: 'white'
+    backgroundColor: '#F5F5DC', // Neutral Color (Soft Beige)
   },
   scrollContainer: {
-    gap: 5,
     marginBottom: 20,
   },
   titleRow: {
     flexDirection: 'row',
     justifyContent: 'flex-start',
     marginBottom: 20,
+    backgroundColor: '#F5F5DC', // Neutral Color (Soft Beige)
   },
   title: {
     fontSize: 24,
     fontWeight: 'bold',
-  },
-  subtitle: {
-    fontSize: 18,
-    fontWeight: '600',
-    marginVertical: 5,
-  },
-  verticalContent: {
-    height: 200,
-    backgroundColor: '#f0f0f0',
-    marginBottom: 20,
-    justifyContent: 'center',
-    alignItems: 'center',
+    color: '#4CAF50', // Secondary Color (Fresh Green)
   },
   searchInput: {
-    flex: 4,
     borderColor: '#ccc',
     borderWidth: 1,
-    marginRight: 10,
     padding: 10,
     borderRadius: 5,
   },
   button: {
-    flex: 1,
-    backgroundColor: '#007BFF',
-    padding: 10,
-    borderRadius: 10, // Rounding corners
+    backgroundColor: '#FF7043', // Primary Color (Warm Orange)
+    paddingVertical: 15,
+    borderRadius: 10,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+  },
+  buttonLink: {
+    width: '100%', // Ensures full width for the link
+    textAlign: 'center',
   },
   buttonText: {
     color: '#fff',
@@ -94,4 +83,3 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
 });
-

@@ -33,8 +33,8 @@ export default function HistoryScreen() {
           data={donationList}
           renderItem={({item}) => 
             <View style={styles.item}>
-            <Text>Food Name : {item.name} {item.specification !== "none"? "("+item.specification+")" : ""}</Text>
-            <Text>Event Date : {item.event_date}</Text>
+            <Text style={styles.itemname}>Food Name : {item.name} {item.specification !== "none"? "("+item.specification+")" : ""}</Text>
+            <Text style={styles.itemdate}>Event Date : {item.event_date}</Text>
           </View>
           }
         />
@@ -47,7 +47,17 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 10,
-    backgroundColor: 'white'
+    backgroundColor: '#F5F5DC', // Neutral Color (Soft Beige)
+  },
+  itemname:{
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: '#4CAF50', // Secondary Color (Fresh Green)
+  },
+  itemdate: {
+    fontSize: 14,
+    color: '#FF7043', // Primary Color (Warm Orange)
+    backgroundColor: '#F5F5DC', // Neutral Color (Soft Beige)
   },
   scrollContainer: {
     gap: 5,
@@ -57,10 +67,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'flex-start',
     marginBottom: 20,
+    backgroundColor: '#F5F5DC', // Neutral Color (Soft Beige)
+
   },
   title: {
     fontSize: 24,
     fontWeight: 'bold',
+    
   },
   subtitle: {
     fontSize: 18,
@@ -79,10 +92,14 @@ const styles = StyleSheet.create({
     marginVertical: 8,
     marginHorizontal: 16,
     borderCurve: "continuous",
-    borderColor: '#333333',
     fontSize: 14,
     fontWeight: 100,
+    borderColor: '#4CAF50', // Secondary Color (Fresh Green)
     borderWidth: 1,
+    borderStyle: 'solid',
+    borderRadius: 5,
+    paddingHorizontal: 5,
+    backgroundColor: '#F5F5DC', // Neutral Color (Soft Beige)
   },
 });
 

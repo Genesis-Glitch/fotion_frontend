@@ -1,4 +1,4 @@
-import { StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
+import { StyleSheet, ScrollView, TouchableOpacity, View  } from 'react-native';
 import { Link } from 'expo-router'; // Import Link from expo-router
 import { useLocalSearchParams } from 'expo-router';
 import Icon from 'react-native-vector-icons/FontAwesome'; // Import the icon library
@@ -7,13 +7,34 @@ import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import React from 'react';
 import ImageSlider from '@/components/ImageSlider';
+import axios from 'axios';
+
+interface EventInfo {
+  id : string,
+  title : string,
+  description : string,
+  location : string,
+  quota : Number,
+  event_date : string,
+  event_time_start : string,
+  event_time_end : string,
+  event_longitude : string,
+  event_latitude : string,
+  event_image_url : string[],
+}
+interface Post {
+  rc : string,
+  message : string,
+  data : EventInfo
+}
 
 const EventDetails = () => {
   const local = useLocalSearchParams();
+  console.log("junhuh741 local : ", local);
   const eventData = {
     "rc": "0000",
     "message": "success",
-    "data": [
+    "data":
       {
         "id": "82ee981b-e19f-962a-401e-ea34ebfb4848",
         "title": "event title",
@@ -27,10 +48,35 @@ const EventDetails = () => {
         "event_latitude": "234234234",
         "event_image_url": ["https://picsum.photos/100/200"]
       },
-    ]
+    
   };
 
-  function formatEventDateTime(event) {
+  const API_URL = `http://52.11.213.134/event/${local.id}`;
+  const API_HEADER = {
+    'Access-Control-Allow-Origin': "*"
+  };
+ 
+  const [data, setData] = React.useState<Post>();
+
+  React.useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    console.log("fetching data");
+    try {
+      const response = await axios.get(API_URL,  {
+        headers: API_HEADER
+      });
+      setData(response.data);
+      console.log(response.data);
+    } catch (error) {
+      setData(eventData);
+      console.error('Error fetching data:', error);
+    }
+  };
+
+  function formatEventDateTime(event: any) {
     const { event_date, event_time_start } = event;
     const date = new Date(`${event_date}T${event_time_start}:00`);
 
@@ -39,8 +85,8 @@ const EventDetails = () => {
       return 'Invalid date';
     }
 
-    const options = {
-      weekday: 'long',
+    const options: Intl.DateTimeFormatOptions = {
+      weekday: 'long',  // TypeScript expects specific values like 'long', 'short', or 'narrow'
       year: 'numeric',
       month: 'short',
       day: 'numeric',
@@ -52,7 +98,13 @@ const EventDetails = () => {
     return `${formattedDate} from ${formattedTime}`;
   }
 
-  const event = eventData.data[0];
+  const event = data?data.data: eventData.data;
+  const initialResion = {
+    latitude: event.event_latitude,
+    longitude: event.event_longitude,
+    latitudeDelta: 0.05,
+    longitudeDelta: 0.05,
+  }
 
   return (
     <ScrollView style={styles.container}>
@@ -77,10 +129,11 @@ const EventDetails = () => {
 
         <ThemedText style={styles.aboutTitle}>About</ThemedText>
         <ThemedText style={styles.aboutText}>{event.description}</ThemedText>
+
       </ThemedView>
 
       <TouchableOpacity style={styles.button}>
-        <Link href="../pages/registered" style={styles.buttonText}>
+        <Link href="/pages/register-details" style={styles.buttonText}>
           Register
         </Link>
       </TouchableOpacity>
@@ -148,6 +201,19 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 16,
     fontWeight: 'bold',
+  },
+  mapTitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginVertical: 10,
+  },
+  mapContainer: {
+    height: 200,
+    borderRadius: 10,
+    overflow: 'hidden',
+  },
+  map: {
+    ...StyleSheet.absoluteFillObject,  // Make the map take up the entire space of its container
   },
 });
 

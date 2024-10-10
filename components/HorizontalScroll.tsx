@@ -6,6 +6,7 @@ interface Props {
     title: string,
     images:
     {
+        id: string,
         title: string,
         url: string
     }[]
@@ -13,11 +14,10 @@ interface Props {
 
 const HorizontalScroll: React.FC<Props> = ({ title, images }) => {
     return (
-
         <View style={styles.container}>
             <ScrollView horizontal style={styles.scrollContainer} contentContainerStyle={styles.contentContainer}>
                 {images.map((item, index) => (
-                    <Link asChild key={index} href={`/pages/event-details?eventId=${title}`}>
+                    <Link asChild key={index} href={`/pages/event-details?title=${title}&id=${item.id}`}>
                         <Pressable>
                             <View style={styles.horizontalItem}>
                                 <Image source={{ uri: item.url }} style={styles.image} />

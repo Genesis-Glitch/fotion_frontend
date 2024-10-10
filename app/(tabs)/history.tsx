@@ -15,7 +15,7 @@ export default function HistoryScreen() {
     { id: 3, name: "bibim-bab", amount: "2", unit: "kg" , expiry_date: "2024-10-16", specification : "vegetarian", event_date : "2024-10-10"},
     { id: 4, name: "Burmese curry", amount: "6", unit: "kg" , expiry_date: "2024-10-30", specification : "none", event_date : "2024-10-13"},
     { id: 5, name: "Nasi Rawon", amount: "7", unit: "kg" , expiry_date: "2024-10-30", specification : "none", event_date : "2024-10-09"},
-    { id: 5, name: "kebab", amount: "2", unit: "kg" , expiry_date: "2024-10-21", specification : "halal", event_date : "2024-10-10"},
+    { id: 6, name: "kebab", amount: "2", unit: "kg" , expiry_date: "2024-10-21", specification : "halal", event_date : "2024-10-10"},
   ]
 
 

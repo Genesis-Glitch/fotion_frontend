@@ -15,7 +15,7 @@ export default function TabLayout() {
         headerShown: false,
       }}>
       <Tabs.Screen
-        name="index"
+        name="index"  
         options={{
           title: 'Home',
           tabBarShowLabel: false,
@@ -31,16 +31,6 @@ export default function TabLayout() {
           tabBarShowLabel: false,
           tabBarIcon: ({ color, focused }) => (
             <TabBarIcon name={focused ? 'list' : 'list-outline'} color={color} />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="donation"
-        options={{
-          title: 'Donatation',
-          tabBarShowLabel: false,
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'heart' : 'heart-outline'} color={color} />
           ),
         }}
       />

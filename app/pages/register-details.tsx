@@ -10,12 +10,9 @@ export default function HomeScreen() {
 
 
   const category = [
-    { name : "id" },
-    { name : "Food name"},
-    { name : "Amount" },
-    { name : "Unit" },
-    { name : "Expiry Date" },
-    { name : "Specification" },
+    { name : "user_id" , visible: false},
+    { name : "Name" , visible: true},
+    { name : "Email" , visible: true},
   ]
 
   return (
@@ -27,9 +24,10 @@ export default function HomeScreen() {
         </ThemedView>
         
         {category.map(item => (
-          <ThemedView style={styles.scrollContainer} key={item.name}>
-            <TextInput style={styles.searchInput} placeholder={item.name} />
-          </ThemedView>
+            item.visible ? 
+            <ThemedView style={styles.scrollContainer} key={item.name}>
+              <TextInput style={styles.searchInput} placeholder={item.name} />
+            </ThemedView> : ""
         ))}
         <TouchableOpacity style={styles.button}onPress={() => {}}>
           {/* <Text style={styles.buttonText}>Register</Text> */}
